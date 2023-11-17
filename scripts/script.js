@@ -17,7 +17,6 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 
-
 let prices = document.getElementsByClassName('products-item-price');
 document.getElementById('change-currency').onclick = function (e) {
     let currentCurrency = e.target.innerText;
@@ -52,6 +51,13 @@ let burger = document.getElementById('burger')
 let name = document.getElementById('name')
 let phone = document.getElementById('phone')
 
+let modal = document.querySelector('#modal')
+let closeModalBtn = document.getElementById('closeModal')
+
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.toggle('active')
+})
+
 document.getElementById('order-action').onclick = function () {
     let hasError = false;
 
@@ -72,7 +78,12 @@ document.getElementById('order-action').onclick = function () {
             orderNumber: Date.now().toString().slice(-5)
         }
 
-        console.log(data)
+        Object.values(data).forEach(([k, v]) => {
+            const p = document.createElement('p');
+        });
+
+        modal.classList.toggle('active');
+
         [burger, name, phone].forEach(item => {
             item.value = '';
         })
