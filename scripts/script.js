@@ -71,19 +71,7 @@ document.getElementById('order-action').onclick = function () {
     })
 
     if (!hasError) {
-        const data = {
-            productName: burger.value,
-            buyerName: name.value,
-            number: phone.value,
-            orderNumber: Date.now().toString().slice(-5)
-        }
-
-        Object.values(data).forEach(([k, v]) => {
-            const p = document.createElement('p');
-        });
-
         modal.classList.toggle('active');
-
         [burger, name, phone].forEach(item => {
             item.value = '';
         })
