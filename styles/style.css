@@ -357,6 +357,20 @@ body {
     padding: 0;
 }
 
+.modal-wrap{
+    min-width: 600px;
+    padding: 20px;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px
+}
+
 .modal-header{
     margin: 0 auto;
 }
@@ -366,29 +380,6 @@ body {
     font-size: 20px;
     text-transform: uppercase;
 }
-
-.modal-header{
-    margin: 0 auto;
-}
-
-.modal-wrap{
-    min-width: 600px;
-    padding: 20px;
-}
-
-.modal-content {
-    padding: 20px
-}
-
-.modal-content{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    background-color: white;
-    border-radius: 5px;
-}
-
-
 
 .modal-footer{
     padding:10px;
