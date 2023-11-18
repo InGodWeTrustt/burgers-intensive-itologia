@@ -102,11 +102,11 @@ productsItems.forEach(item => {
     // Создаем объект с свойствами title и price и добавляем его в массив products
     productsData.push({
         title,
-        price,
-        basePrice: price,
+        price: +price,
+        basePrice: +price,
         text,
         image,
-        grams
+        grams: +grams
     });
 });
 
