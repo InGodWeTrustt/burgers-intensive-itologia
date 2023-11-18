@@ -77,3 +77,37 @@ document.getElementById('order-action').onclick = function () {
         })
     }
 }
+
+const productsItems = document.querySelectorAll('.products-item');
+
+// Создаем пустой массив
+const productsData = [];
+
+// Проходимся по всем элементам products-item и добавляем их свойства в массив products
+productsItems.forEach(item => {
+    const text = item.querySelector('.products-item-text').innerText;
+    const title = item.querySelector('.products-item-title').innerText;
+    const price = item.querySelector('.products-item-price').getAttribute('data-base-price');
+    debugger;
+    let image = item.querySelector('.products-item-image > img').getAttribute('src');
+    let grams = item.querySelector('.products-item-weight').innerText;
+
+    // Делим текст по разделителю
+    const parts = image.split('/');
+    // Получаем название файла с расширением
+    image = parts[parts.length - 1];
+
+    // Тоже самое с весом, я делю по пробелу и получаю первый элемент
+    grams = grams.split(' ')[0]
+    // Создаем объект с свойствами title и price и добавляем его в массив products
+    productsData.push({
+        title,
+        price,
+        basePrice: price,
+        text,
+        image,
+        grams
+    });
+});
+
+console.log(productsData);
